@@ -1,5 +1,6 @@
 package com.example.pelist;
 
+import android.database.Cursor;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -12,8 +13,25 @@ import android.view.View;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
+
+import bd.DBManager;
+import bd.DatabaseHelper;
 
 public class MainActivity extends AppCompatActivity {
+
+    private DBManager dbManager;
+
+    private ListView listView;
+
+    private SimpleCursorAdapter adapter;
+
+    final String[] from = new String[] { DatabaseHelper._ID,
+            DatabaseHelper.NOMBRE};
+
+    final int[] to = new int[] { R.id.id, R.id.title };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +39,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        dbManager = new DBManager(this);
+        dbManager.open();
+        Cursor cursor = dbManager.fetch();
+
+        listView = (ListView) findViewById(R.id.list_view);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
