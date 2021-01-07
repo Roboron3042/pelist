@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#00BCD4"
+    android:backgroundTint="#FFFFFF"
+    android:foregroundTint="#FFFFFF"
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -28,6 +31,22 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:backgroundTint="#00BCD4"
+        android:foregroundTint="#FFFFFF"
+        android:tint="#FF5722"
+        app:backgroundTint="#FF5722"
+        app:rippleColor="#9C27B0"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+    <TextView
+        android:id="@+id/nombre"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:maxLines="1"
+        android:padding="3dp"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

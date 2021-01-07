@@ -22,6 +22,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Creating table query
     private static final String CREATE_TABLE = "create table " + TABLE_NAME + "(" + _ID
             + " INTEGER PRIMARY KEY AUTOINCREMENT, " + NOMBRE + " TEXT NOT NULL);";
+    private static final String INSERT_VISTAS = "insert into " + TABLE_NAME + "(" + _ID + "," + NOMBRE + ")"
+        + "values ( 0, 'Vistas' );";
+
 
     public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -30,6 +33,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE);
+        db.execSQL(INSERT_VISTAS);
     }
 
     @Override
