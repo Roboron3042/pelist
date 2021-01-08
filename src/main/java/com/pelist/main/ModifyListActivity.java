@@ -13,7 +13,7 @@ import android.widget.EditText;
 
 import db.DBManager;
 
-public class ModifyCountryActivity extends Activity implements OnClickListener {
+public class ModifyListActivity extends Activity implements OnClickListener {
 
     private EditText titleText;
     private Button updateBtn, deleteBtn;
@@ -29,7 +29,7 @@ public class ModifyCountryActivity extends Activity implements OnClickListener {
 
         setTitle(getString(R.string.btn_update));
 
-        setContentView(R.layout.activity_modify_record);
+        setContentView(R.layout.activity_modify_list);
 
         dbManager = new DBManager(this);
         dbManager.open();
@@ -73,7 +73,7 @@ public class ModifyCountryActivity extends Activity implements OnClickListener {
     }
 
     public void returnHome() {
-        Intent home_intent = new Intent(getApplicationContext(), CountryListActivity.class)
+        Intent home_intent = new Intent(getApplicationContext(), ListActivity.class)
                 .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(home_intent);
     }

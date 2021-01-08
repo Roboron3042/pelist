@@ -13,4 +13,10 @@
     <string name="pending_movies_list_description">Pending movies to watch</string>
     <string name="selectedlanguage">English</string>
     <string name="language">English</string>
+    <!-- Movies -->
+    <string name="enter_dir">Director</string>
+    <string name="enter_year">Year</string>
+    <string name="enter_score">Score</string>
+    <string name="enter_date">Date</string>
+    <string name="enter_list">List</string>
 </resources>

@@ -13,7 +13,7 @@ import android.widget.EditText;
 
 import db.DBManager;
 
-public class AddCountryActivity extends Activity implements OnClickListener {
+public class AddListActivity extends Activity implements OnClickListener {
 
     private Button addTodoBtn;
     private EditText subjectEditText;
@@ -27,7 +27,7 @@ public class AddCountryActivity extends Activity implements OnClickListener {
 
         setTitle(getString(R.string.add_record));
 
-        setContentView(R.layout.activity_add_record);
+        setContentView(R.layout.activity_add_list);
 
         subjectEditText = (EditText) findViewById(R.id.subject_edittext);
         descEditText = (EditText) findViewById(R.id.description_edittext);
@@ -49,7 +49,7 @@ public class AddCountryActivity extends Activity implements OnClickListener {
 
                 dbManager.insert_list(name, desc);
 
-                Intent main = new Intent(AddCountryActivity.this, CountryListActivity.class)
+                Intent main = new Intent(AddListActivity.this, ListActivity.class)
                         .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
                 startActivity(main);

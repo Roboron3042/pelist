@@ -18,12 +18,10 @@ import android.content.DialogInterface;
 
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import db.DBManager;
 import db.DatabaseHelper;
 
-public class CountryListActivity extends AppCompatActivity {
+public class ListActivity extends AppCompatActivity {
 
     private DBManager dbManager;
 
@@ -46,19 +44,16 @@ public class CountryListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-        String v= getString(R.string.watched_movies_list);
-
         setContentView(R.layout.fragment_emp_list);
 
         dbManager = new DBManager(this);
         dbManager.open();
-        Cursor cursor = dbManager.fetch_list();
+        Cursor cursor = dbManager.fetch_lists();
 
         listView = (ListView) findViewById(R.id.list_view);
         listView.setEmptyView(findViewById(R.id.empty));
 
-        adapter = new SimpleCursorAdapter(this, R.layout.activity_view_record, cursor, from, to, 0);
+        adapter = new SimpleCursorAdapter(this, R.layout.activity_view_item, cursor, from, to, 0);
         adapter.notifyDataSetChanged();
 
         listView.setAdapter(adapter);
@@ -75,7 +70,7 @@ public class CountryListActivity extends AppCompatActivity {
                 String title = titleTextView.getText().toString();
                 String desc = descTextView.getText().toString();
 
-                Intent modify_intent = new Intent(getApplicationContext(), ModifyCountryActivity.class);
+                Intent modify_intent = new Intent(getApplicationContext(), MovieListActivity.class);
                 modify_intent.putExtra("title", title);
                 modify_intent.putExtra("desc", desc);
                 modify_intent.putExtra("id", id);
@@ -98,18 +93,18 @@ public class CountryListActivity extends AppCompatActivity {
                 {
                     checkedItem=1;
                 }
-                final AlertDialog.Builder builder = new AlertDialog.Builder(CountryListActivity.this);
+                final AlertDialog.Builder builder = new AlertDialog.Builder(ListActivity.this);
                 builder.setTitle("Select a Language...")
                         .setSingleChoiceItems(Language, checkedItem, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(CountryListActivity.this,""+which,Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ListActivity.this,""+which,Toast.LENGTH_SHORT).show();
                                 language_dialog.setText(Language[which]);
                                 lang_selected= Language[which].equals("ENGLISH");
                                 //if user select prefered language as English then
                                 if(Language[which].equals("ENGLISH"))
                                 {
-                                    context = LocaleHelper.setLocale(CountryListActivity.this, "en");
+                                    context = LocaleHelper.setLocale(ListActivity.this, "en");
                                     resources = context.getResources();
                                     //text1.setText(resources.getString(R.string.language));
 
@@ -117,7 +112,7 @@ public class CountryListActivity extends AppCompatActivity {
                                 //if user select prefered language as Hindi then
                                 if(Language[which].equals("SPANISH"))
                                 {
-                                    context = LocaleHelper.setLocale(CountryListActivity.this, "es");
+                                    context = LocaleHelper.setLocale(ListActivity.this, "es");
                                     resources = context.getResources();
                                     //text1.setText(resources.getString(R.string.language));
                                 }
@@ -146,7 +141,7 @@ public class CountryListActivity extends AppCompatActivity {
         int id = item.getItemId();
         if (id == R.id.add_record) {
 
-            Intent add_mem = new Intent(this, AddCountryActivity.class);
+            Intent add_mem = new Intent(this, AddListActivity.class);
             startActivity(add_mem);
 
         }

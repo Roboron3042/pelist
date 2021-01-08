@@ -41,7 +41,7 @@ public class DBManager {
         database.insert(DatabaseHelper.LISTS_TABLE, null, contentValue);
     }
 
-    private void insert_movie(String name, String desc, String dir, Integer year, Integer score, String date, Integer list) {
+    public void insert_movie(String name, String desc, String dir, Integer year, Integer score, String date, Integer list) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(DatabaseHelper.SUBJECT, name);
         contentValue.put(DatabaseHelper.DESC, desc);
@@ -54,7 +54,7 @@ public class DBManager {
 
     }
 
-    public Cursor fetch_list() {
+    public Cursor fetch_lists() {
         String[] columns = new String[] { DatabaseHelper._ID, DatabaseHelper.SUBJECT, DatabaseHelper.DESC };
         Cursor cursor = database.query(DatabaseHelper.LISTS_TABLE, columns, null, null, null, null, null);
         if (cursor != null) {
@@ -63,10 +63,20 @@ public class DBManager {
         return cursor;
     }
 
-    public Cursor fetch_movie() {
+    public Cursor fetch_movies(long list) {
         String[] columns = new String[] { DatabaseHelper._ID, DatabaseHelper.SUBJECT, DatabaseHelper.DESC, DatabaseHelper.DIR,
                 DatabaseHelper.YEAR, DatabaseHelper.SCORE, DatabaseHelper.DATE, DatabaseHelper.LIST};
-        Cursor cursor = database.query(DatabaseHelper.MOVIES_TABLE, columns, null, null, null, null, null);
+        Cursor cursor = database.query(DatabaseHelper.MOVIES_TABLE, columns, DatabaseHelper.LIST + "=" + list, null, null, null, null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+        return cursor;
+    }
+
+    public Cursor fetch_movie(long id) {
+        String[] columns = new String[] { DatabaseHelper._ID, DatabaseHelper.SUBJECT, DatabaseHelper.DESC, DatabaseHelper.DIR,
+                DatabaseHelper.YEAR, DatabaseHelper.SCORE, DatabaseHelper.DATE, DatabaseHelper.LIST};
+        Cursor cursor = database.query(DatabaseHelper.MOVIES_TABLE, columns, DatabaseHelper._ID + "=" + id, null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }
