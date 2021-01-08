@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Pelist</string>
+    <string name="enter_name">Nom de la liste</string>
+    <string name="add_record">Ajouter une nouvelle liste</string>
+    <string name="btn_update">Mettre à jour la liste</string>
+    <string name="btn_delete">Supprimer la liste</string>
+    <string name="empty_list_text">Aucune liste trouvée</string>
+    <string name="enter_desc">Description de la liste</string>
+    <string name="enter_title">Titre de la liste</string>
+    <string name="watched_movies_list">Vus</string>
+    <string name="watched_movies_list_description">Des films déjà vus</string>
+    <string name="pending_movies_list">Films en attente</string>
+    <string name="pending_movies_list_description">Films en attente de voir</string>
+</resources>
