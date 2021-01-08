@@ -14,6 +14,8 @@
     <string name="selectedlanguage">English</string>
     <string name="language">English</string>
     <!-- Movies -->
+    <string name="add_movie">Add New Movie</string>
+    <string name="modify_movie">ModifyMovie</string>
     <string name="enter_dir">Director</string>
     <string name="enter_year">Year</string>
     <string name="enter_score">Score</string>

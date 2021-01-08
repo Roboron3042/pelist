@@ -1,7 +1,9 @@
 package com.pelist.main;
 
 /**
- * Created by anupamchugh on 19/10/15.
+ * Autores:
+ * Roberto Michán Sánchez
+ * Tomás Goizueta Díaz-Parreño
  */
 import android.app.Activity;
 import android.content.Intent;

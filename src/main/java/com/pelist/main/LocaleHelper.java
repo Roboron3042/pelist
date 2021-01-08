@@ -1,5 +1,11 @@
 package com.pelist.main;
 
+/**
+ * Autores:
+ * Roberto Michán Sánchez
+ * Tomás Goizueta Díaz-Parreño
+ */
+
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.SharedPreferences;

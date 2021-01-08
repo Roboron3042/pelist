@@ -11,4 +11,14 @@
     <string name="watched_movies_list_description">Peliculas que ya han sido vistas</string>
     <string name="pending_movies_list">Pendientes</string>
     <string name="pending_movies_list_description">Peliculas pendientes por ver</string>
+    <string name="selectedlanguage">Español</string>
+    <string name="language">Español</string>
+    <!-- Movies -->
+    <string name="add_movie">Añadir Película</string>
+    <string name="modify_movie">Modificar Película</string>
+    <string name="enter_dir">Director</string>
+    <string name="enter_year">Año</string>
+    <string name="enter_score">Puntuación</string>
+    <string name="enter_date">Fecha</string>
+    <string name="enter_list">Lista</string>
 </resources>

@@ -1,5 +1,11 @@
 package db;
 
+/**
+ * Autores:
+ * Roberto Michán Sánchez
+ * Tomás Goizueta Díaz-Parreño
+ */
+
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;

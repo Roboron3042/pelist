@@ -1,5 +1,11 @@
 package com.pelist.main;
 
+/**
+ * Autores:
+ * Roberto Michán Sánchez
+ * Tomás Goizueta Díaz-Parreño
+ */
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
@@ -83,55 +89,6 @@ public class MovieListActivity extends AppCompatActivity {
                 modify_intent.putExtra("list", getIntent().getStringExtra("id"));
 
                 startActivity(modify_intent);
-            }
-        });
-        //setContentView(R.layout.activity_main);
-
-        language_dialog = (TextView)findViewById(R.id.dialog_language);
-        language_dialog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final String[] Language = {"ENGLISH", "SPANISH"};
-                final int checkedItem;
-                if(lang_selected)
-                {
-                    checkedItem=0;
-                }else
-                {
-                    checkedItem=1;
-                }
-                final AlertDialog.Builder builder = new AlertDialog.Builder(MovieListActivity.this);
-                builder.setTitle("Select a Language...")
-                        .setSingleChoiceItems(Language, checkedItem, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Toast.makeText(MovieListActivity.this,""+which,Toast.LENGTH_SHORT).show();
-                                language_dialog.setText(Language[which]);
-                                lang_selected= Language[which].equals("ENGLISH");
-                                //if user select prefered language as English then
-                                if(Language[which].equals("ENGLISH"))
-                                {
-                                    context = LocaleHelper.setLocale(MovieListActivity.this, "en");
-                                    resources = context.getResources();
-                                    //text1.setText(resources.getString(R.string.language));
-
-                                }
-                                //if user select prefered language as Hindi then
-                                if(Language[which].equals("SPANISH"))
-                                {
-                                    context = LocaleHelper.setLocale(MovieListActivity.this, "es");
-                                    resources = context.getResources();
-                                    //text1.setText(resources.getString(R.string.language));
-                                }
-                            }
-                        })
-                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        });
-                builder.create().show();
             }
         });
     }
