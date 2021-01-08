@@ -11,8 +11,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.pelist.main.R;
-
 import db.DBManager;
 
 public class AddCountryActivity extends Activity implements OnClickListener {
@@ -49,7 +47,7 @@ public class AddCountryActivity extends Activity implements OnClickListener {
                 final String name = subjectEditText.getText().toString();
                 final String desc = descEditText.getText().toString();
 
-                dbManager.insert(name, desc);
+                dbManager.insert_list(name, desc);
 
                 Intent main = new Intent(AddCountryActivity.this, CountryListActivity.class)
                         .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

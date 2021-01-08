@@ -11,8 +11,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.pelist.main.R;
-
 import db.DBManager;
 
 public class ModifyCountryActivity extends Activity implements OnClickListener {
@@ -63,12 +61,12 @@ public class ModifyCountryActivity extends Activity implements OnClickListener {
                 String title = titleText.getText().toString();
                 String desc = descText.getText().toString();
 
-                dbManager.update(_id, title, desc);
+                dbManager.update_list(_id, title, desc);
                 this.returnHome();
                 break;
 
             case R.id.btn_delete:
-                dbManager.delete(_id);
+                dbManager.delete_list(_id);
                 this.returnHome();
                 break;
         }
