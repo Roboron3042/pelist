@@ -25,7 +25,7 @@ public class AddCountryActivity extends Activity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setTitle("Add Record");
+        setTitle(getString(R.string.add_record));
 
         setContentView(R.layout.activity_add_record);
 

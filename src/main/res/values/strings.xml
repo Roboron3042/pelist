@@ -1,16 +1,16 @@
 <resources>
     <string name="app_name">Pelist</string>
-    <string name="enter_name">Country Name</string>
-    <string name="add_record">Add Record</string>
-    <string name="btn_update">Update</string>
-    <string name="btn_delete">Delete</string>
-    <string name="empty_list_text">No records found</string>
-    <string name="enter_desc">Currency</string>
-    <string name="enter_title">Country</string>
+    <string name="enter_name">List Name</string>
+    <string name="add_record">Add New List</string>
+    <string name="btn_update">Update list</string>
+    <string name="btn_delete">Delete list</string>
+    <string name="empty_list_text">No lists found</string>
+    <string name="enter_desc">Enter a description</string>
+    <string name="enter_title">Enter a title</string>
     <string name="watched_movies_list">Watched</string>
     <string name="watched_movies_list_description">Movies already watched</string>
     <string name="pending_movies_list">Pending</string>
     <string name="pending_movies_list_description">Pending movies to watch</string>
-    <string name="selectedlanguage">eng</string>
-    <string name="language">english</string>
+    <string name="selectedlanguage">English</string>
+    <string name="language">English</string>
 </resources>

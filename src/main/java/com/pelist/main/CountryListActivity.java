@@ -84,7 +84,7 @@ public class CountryListActivity extends AppCompatActivity {
             }
         });
         //setContentView(R.layout.activity_main);
-
+        /*
         language_dialog = (TextView)findViewById(R.id.dialog_language);
         language_dialog.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,7 +131,7 @@ public class CountryListActivity extends AppCompatActivity {
                         });
                 builder.create().show();
             }
-        });
+        });*/
     }
 
     @Override

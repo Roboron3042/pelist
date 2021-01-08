@@ -27,7 +27,7 @@ public class ModifyCountryActivity extends Activity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setTitle("Modify Record");
+        setTitle(getString(R.string.btn_update));
 
         setContentView(R.layout.activity_modify_record);
 
