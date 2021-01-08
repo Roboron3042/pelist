@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import db.DBManager;
 
@@ -68,6 +69,9 @@ public class AddMovieActivity extends Activity implements OnClickListener {
                         .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 main.putExtra("id", list.toString());
                 main.putExtra("title", getIntent().getStringExtra("title"));
+
+                Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.added_movie), Toast.LENGTH_LONG);
+                toast.show();
 
                 startActivity(main);
                 break;

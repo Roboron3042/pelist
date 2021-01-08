@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import db.DBManager;
 
@@ -90,6 +91,8 @@ public class ModifyMovieActivity extends Activity implements OnClickListener {
                 Integer list = Integer.parseInt(listText.getText().toString());
 
                 dbManager.update_movie(_id, title, desc, dir, year, score, date, list);
+                Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.modified_movie), Toast.LENGTH_LONG);
+                toast.show();
                 this.returnHome(list.toString());
                 break;
 

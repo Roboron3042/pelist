@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.SimpleCursorAdapter;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -58,6 +59,11 @@ public class ListActivity extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.list_view);
         listView.setEmptyView(findViewById(R.id.empty));
+
+        if(dbManager.fetch_movies(1).getCount() == 0) {
+            Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.no_pending), Toast.LENGTH_LONG);
+            toast.show();
+        }
 
         adapter = new SimpleCursorAdapter(this, R.layout.activity_view_item, cursor, from, to, 0);
         adapter.notifyDataSetChanged();

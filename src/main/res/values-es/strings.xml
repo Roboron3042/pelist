@@ -2,8 +2,9 @@
     <string name="app_name">Pelist</string>
     <string name="enter_name">Nombre de la lista</string>
     <string name="add_list">Añadir nueva lista</string>
-    <string name="btn_update">Actualizar lista</string>
-    <string name="btn_delete">Eliminar lista</string>
+    <string name="added_list">Lista añadida con éxito</string>
+    <string name="btn_update">Actualizar película</string>
+    <string name="btn_delete">Eliminar película</string>
     <string name="empty_list_text">No se han encontrado listas</string>
     <string name="enter_desc">Descripción de la lista</string>
     <string name="enter_title">Titulo de la lista</string>
@@ -11,11 +12,14 @@
     <string name="watched_movies_list_description">Peliculas que ya han sido vistas</string>
     <string name="pending_movies_list">Pendientes</string>
     <string name="pending_movies_list_description">Peliculas pendientes por ver</string>
+    <string name="no_pending">¡Sin películas pendientes para ver!</string>
     <string name="selectedlanguage">Español</string>
     <string name="language">Español</string>
     <!-- Movies -->
     <string name="add_movie">Añadir Película</string>
+    <string name="added_movie">Película añadida con éxito</string>
     <string name="modify_movie">Modificar Película</string>
+    <string name="modified_movie">Película modificada con éxito</string>
     <string name="enter_dir">Director</string>
     <string name="enter_year">Año</string>
     <string name="enter_score">Puntuación</string>

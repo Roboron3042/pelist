@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import db.DBManager;
 
@@ -53,6 +54,9 @@ public class AddListActivity extends Activity implements OnClickListener {
 
                 Intent main = new Intent(AddListActivity.this, ListActivity.class)
                         .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.added_list), Toast.LENGTH_LONG);
+                toast.show();
 
                 startActivity(main);
                 break;
