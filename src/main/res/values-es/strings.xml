@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Pelist</string>
+    <string name="enter_name">Pais</string>
+    <string name="add_record">Añadir registro</string>
+    <string name="btn_update">Actualizar</string>
+    <string name="btn_delete">Eliminar</string>
+    <string name="empty_list_text">No se han encontrado registros</string>
+    <string name="enter_desc">Moneda</string>
+    <string name="enter_title">Pais</string>
+    <string name="watched_movies_list">Vistas</string>
+    <string name="watched_movies_list_description">Peliculas que ya han sido vistas</string>
+    <string name="pending_movies_list">Pendientes</string>
+    <string name="pending_movies_list_description">Peliculas pendientes por ver</string>
+</resources>
