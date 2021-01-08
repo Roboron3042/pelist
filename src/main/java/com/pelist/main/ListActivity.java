@@ -96,7 +96,7 @@ public class ListActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         int id = item.getItemId();
-        if (id == R.id.add_record) {
+        if (id == R.id.add_list) {
 
             Intent add_mem = new Intent(this, AddListActivity.class);
             startActivity(add_mem);

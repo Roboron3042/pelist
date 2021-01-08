@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Pelist</string>
     <string name="enter_name">Nombre de la lista</string>
-    <string name="add_record">Añadir nueva lista</string>
+    <string name="add_list">Añadir nueva lista</string>
     <string name="btn_update">Actualizar lista</string>
     <string name="btn_delete">Eliminar lista</string>
     <string name="empty_list_text">No se han encontrado listas</string>

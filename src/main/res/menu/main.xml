@@ -4,10 +4,10 @@
     tools:context="com.example.sqlitesample.MainActivity" >
 
     <item
-        android:id="@+id/add_record"
+        android:id="@+id/add_list"
         android:icon="@android:drawable/ic_menu_add"
         android:orderInCategory="100"
-        android:title="@string/add_record"
+        android:title="@string/add_list"
         app:showAsAction="always"/>
 
 </menu>

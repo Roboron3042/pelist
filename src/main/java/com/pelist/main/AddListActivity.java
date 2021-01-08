@@ -27,14 +27,14 @@ public class AddListActivity extends Activity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setTitle(getString(R.string.add_record));
+        setTitle(getString(R.string.add_list));
 
         setContentView(R.layout.activity_add_list);
 
         subjectEditText = (EditText) findViewById(R.id.subject_edittext);
         descEditText = (EditText) findViewById(R.id.description_edittext);
 
-        addTodoBtn = (Button) findViewById(R.id.add_record);
+        addTodoBtn = (Button) findViewById(R.id.add_list);
 
         dbManager = new DBManager(this);
         dbManager.open();
@@ -44,7 +44,7 @@ public class AddListActivity extends Activity implements OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.add_record:
+            case R.id.add_list:
 
                 final String name = subjectEditText.getText().toString();
                 final String desc = descEditText.getText().toString();

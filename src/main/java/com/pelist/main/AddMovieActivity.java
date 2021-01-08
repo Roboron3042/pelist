@@ -42,7 +42,7 @@ public class AddMovieActivity extends Activity implements OnClickListener {
         scoreEditText = (EditText) findViewById(R.id.score_edittext);
         dateEditText = (EditText) findViewById(R.id.date_edittext);
 
-        addTodoBtn = (Button) findViewById(R.id.add_record);
+        addTodoBtn = (Button) findViewById(R.id.add_movie);
 
         dbManager = new DBManager(this);
         dbManager.open();
@@ -52,7 +52,7 @@ public class AddMovieActivity extends Activity implements OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.add_record:
+            case R.id.add_movie:
 
                 final String name = subjectEditText.getText().toString();
                 final String desc = descEditText.getText().toString();
