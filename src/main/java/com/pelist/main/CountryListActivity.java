@@ -1,6 +1,8 @@
 package com.pelist.main;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.SimpleCursorAdapter;
@@ -10,6 +12,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,8 +30,14 @@ public class CountryListActivity extends AppCompatActivity {
     private DBManager dbManager;
 
     private ListView listView;
+    Context context;
+    Resources resources;
+
 
     private SimpleCursorAdapter adapter;
+
+    TextView language_dialog,text1;
+    boolean lang_selected;
 
     final String[] from = new String[] { DatabaseHelper._ID,
             DatabaseHelper.SUBJECT, DatabaseHelper.DESC };
@@ -70,6 +83,55 @@ public class CountryListActivity extends AppCompatActivity {
                 modify_intent.putExtra("id", id);
 
                 startActivity(modify_intent);
+            }
+        });
+        //setContentView(R.layout.activity_main);
+
+        language_dialog = (TextView)findViewById(R.id.dialog_language);
+        language_dialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final String[] Language = {"ENGLISH", "SPANISH"};
+                final int checkedItem;
+                if(lang_selected)
+                {
+                    checkedItem=0;
+                }else
+                {
+                    checkedItem=1;
+                }
+                final AlertDialog.Builder builder = new AlertDialog.Builder(CountryListActivity.this);
+                builder.setTitle("Select a Language...")
+                        .setSingleChoiceItems(Language, checkedItem, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(CountryListActivity.this,""+which,Toast.LENGTH_SHORT).show();
+                                language_dialog.setText(Language[which]);
+                                lang_selected= Language[which].equals("ENGLISH");
+                                //if user select prefered language as English then
+                                if(Language[which].equals("ENGLISH"))
+                                {
+                                    context = LocaleHelper.setLocale(CountryListActivity.this, "en");
+                                    resources = context.getResources();
+                                    //text1.setText(resources.getString(R.string.language));
+
+                                }
+                                //if user select prefered language as Hindi then
+                                if(Language[which].equals("SPANISH"))
+                                {
+                                    context = LocaleHelper.setLocale(CountryListActivity.this, "es");
+                                    resources = context.getResources();
+                                    //text1.setText(resources.getString(R.string.language));
+                                }
+                            }
+                        })
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                builder.create().show();
             }
         });
     }

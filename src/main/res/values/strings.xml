@@ -11,4 +11,6 @@
     <string name="watched_movies_list_description">Movies already watched</string>
     <string name="pending_movies_list">Pending</string>
     <string name="pending_movies_list_description">Pending movies to watch</string>
+    <string name="selectedlanguage">eng</string>
+    <string name="language">english</string>
 </resources>
